@@ -1,0 +1,48 @@
+mat-expansion-panel {
+  width: 1000px;
+  margin-bottom: 1rem;
+}
+
+mat-expansion-panel mat-panel-title span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #69f0ae;
+  margin-right: 1rem;
+}
+
+mat-expansion-panel mat-panel-description div {
+  margin-right: 1rem;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+mat-expansion-panel mat-panel-description div span {
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 0.25rem;
+  color: #43a047;
+}
+
+mat-expansion-panel mat-panel-description div.ex span {
+  color: #f44336;
+}
+
+mat-expansion-panel section {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-expansion-panel section h3 {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+mat-expansion-panel section .income h3 {
+  color: #43a047;
+}
+
+mat-expansion-panel section .expenditure h3 {
+  color: #f44336;
+} 
