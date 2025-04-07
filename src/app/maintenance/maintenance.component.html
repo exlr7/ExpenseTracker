@@ -1,0 +1,66 @@
+<app-page-header [title]="'Maintenance'" />
+
+<section class="insert-form" [formGroup]="transactionForm">
+    <h2>Insert Transaction</h2>
+
+    <mat-form-field appearance="outline" color="accent" class="year">
+        <mat-label>Year</mat-label>
+        <mat-select formControlName="year">
+            @for (year of years; track year) {
+            <mat-option [value]="year">{{year}}</mat-option>
+            }
+        </mat-select>
+        <mat-error>Required!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="accent" class="month">
+        <mat-label>Month</mat-label>
+        <mat-select formControlName="month">
+            @for (month of months; track month) {
+            <mat-option [value]="month.index">
+                {{month.name}}
+            </mat-option>
+            }
+        </mat-select>
+        <mat-error>Required!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="accent" class="date">
+        <mat-label>Date</mat-label>
+        <input type="number" matInput formControlName="date" min="1" max="31">
+        <mat-error>Invalid!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="accent" class="desc">
+        <mat-label>Description</mat-label>
+        <input type="text" matInput formControlName="description">
+        <mat-error>Required!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="accent" class="amt">
+        <mat-label>Amount</mat-label>
+        <input type="number" matInput formControlName="amount" min="0">
+        <mat-error>Required!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="accent" class="type">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="type">
+            @for (type of types; track type) {
+            <mat-option [value]="type">{{type}}</mat-option>
+            }
+        </mat-select>
+        <mat-error>Required!</mat-error>
+    </mat-form-field>
+
+    <div class="buttons">
+        <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!transactionForm.valid">
+            Submit
+        </button>
+        <button mat-raised-button color="warn" (click)="onReset()">
+            Reset
+        </button>
+    </div>
+</section>
+
+<app-in-ex-table [transactions]="transactions" [type]="'ALL'" />

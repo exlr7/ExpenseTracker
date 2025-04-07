@@ -1,0 +1,10 @@
+<app-page-header [title]="title" (menuClicked)="menuClicked = !menuClicked" />
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="menuClicked">
+        <app-side-nav />
+    </mat-drawer>
+    <main>
+        <router-outlet />
+    </main>
+</mat-drawer-container>
